@@ -1,5 +1,6 @@
 package com.nvz.quick_news.entity;
 
+import com.nvz.quick_news.entity.enumClasses.ArticleStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -29,6 +30,9 @@ public class Article {
     private String imageUrl;
 
     //status (draft, published, archived)
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private ArticleStatus status;
 
     // Relationships
     @ManyToOne
