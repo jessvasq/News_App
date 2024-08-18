@@ -21,9 +21,9 @@ public class Comment {
 
     // Relationships
     @ManyToOne
-    @JoinColumn(name="userId", nullable=false)
+    @JoinColumn(name="user_id", nullable=false)
     private User user;
     @ManyToOne
-    @JoinColumn(name="articleId", nullable = false)
+    @JoinColumn(name="article_id", nullable = false)
     private Article article;
 }

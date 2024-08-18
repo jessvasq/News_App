@@ -38,11 +38,11 @@ public class Article {
 
     // Relationships
     @ManyToOne
-    @JoinColumn(name="userId", nullable=false, updatable=false)
+    @JoinColumn(name="user_id", nullable=false, updatable=false)
     private User author;
 
     @ManyToOne
-    @JoinColumn(name="categoryId")
+    @JoinColumn(name="category_id")
     private Category category;
 
     @ManyToMany
