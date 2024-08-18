@@ -3,7 +3,6 @@ package com.nvz.quick_news.entity;
 import com.nvz.quick_news.entity.enumClasses.ArticleStatus;
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.List;
