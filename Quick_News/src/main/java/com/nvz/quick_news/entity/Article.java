@@ -5,7 +5,9 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -38,11 +40,21 @@ public class Article {
     @ManyToOne
     @JoinColumn(name="userId", nullable=false, updatable=false)
     private User author;
-    @OneToMany(mappedBy = "article", cascade = CascadeType.ALL, orphanRemoval = true)
+
+    @ManyToOne
+    @JoinColumn(name="categoryId")
     private Category category;
+
+    @ManyToMany
+    @JoinTable(
+            name="tagging",
+            joinColumns = @JoinColumn(name = "article_id"),
+            inverseJoinColumns = @JoinColumn(name="tag_id")
+    )
+    private Set<Tag> tags = new HashSet<>();
+
     @OneToMany(mappedBy = "article", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> comments;
-    @OneToMany(mappedBy = "article", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Tag> tags;
+
 
 }
