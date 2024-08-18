@@ -30,6 +30,9 @@ public class User {
     @ManyToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Role> roles;
 
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Article> articles;
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<SavedArticle> savedArticles;
 
