@@ -23,9 +23,6 @@ public class Article {
     private String title;
     @Column(nullable = false)
     private String content;
-    @Column(nullable = false)
-    private String authorId;
-    private String categoryId;
     private LocalDateTime publishDate;
     private LocalDateTime updateDate;
     private String imageUrl;
