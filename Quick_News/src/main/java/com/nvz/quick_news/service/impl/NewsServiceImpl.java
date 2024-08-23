@@ -5,11 +5,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * Fetches data from the API
+ */
 @Service
 public class NewsServiceImpl implements NewsService {
 
-    @Value("${NEWSAPI_KEY}")
-    private String apiKey;
+    private String apiKey = System.getenv("NEWSAPI_KEY");
 
     private final RestTemplate restTemplate = new RestTemplate();
 
