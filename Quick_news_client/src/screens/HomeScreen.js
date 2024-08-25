@@ -6,24 +6,29 @@ const HomeScreen = ({ navigation }) => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const fetchNews = async () => {
+    try {
+      const data = await getTopHeadlines('us');
+      console.log('Fetched data:', data); // Log the data
+      setArticles(data.articles);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching news:', error);
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const data = await getTopHeadlines('us');
-        setArticles(data.articles);
-      } catch (error) {
-        console.error('Error fetching news:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
     fetchNews();
   }, []);
 
-
-  if (articles.length === 0) {
-    return <Text>No articles found. Please try again later.</Text>;
+  if (loading) {
+    return <Text>Loading...</Text>;
   }
+
+  // if (articles.length === 0) {
+  //   return <Text>No articles found. Please try again later.</Text>;
+  // }
 
   return (
     <View style={styles.container}>

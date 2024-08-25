@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8088/newsApp/'
+const API_URL = 'http://localhost/api/news';
 
 export const getTopHeadlines = async (country = 'us') => {
   try {
@@ -10,6 +10,6 @@ export const getTopHeadlines = async (country = 'us') => {
     return response.data;
   } catch (error) {
     console.error('Error fetching top headlines:', error.message || error.response?.data || error);
-    throw error; // Re-throw the error so that it can be caught in the calling function
+    throw error; 
   }
 };
