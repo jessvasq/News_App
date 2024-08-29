@@ -3,10 +3,7 @@ package com.nvz.quick_news.controller;
 import com.nvz.quick_news.entity.NewsArticle;
 import com.nvz.quick_news.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 /**
@@ -24,11 +21,9 @@ public class NewsController {
         this.newsService = newsService;
     }
 
-//    @GetMapping("/news")
-//    public String getNews(@RequestParam(value = "country", defaultValue = "us") String country) {
-//        return newsService.getTopHeadlines(country);
-//    }
-
-
+    @GetMapping("/news")
+    public List<NewsArticle> getNews(@RequestParam(value = "country", defaultValue = "us") String country) throws Exception {
+        return newsService.getTopHeadlines(country);
+    }
 
 }
