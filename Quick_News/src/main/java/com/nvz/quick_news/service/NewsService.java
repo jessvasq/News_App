@@ -21,13 +21,18 @@ import java.util.Map;
 public class NewsService {
     private final String apiKey= "******";
 
-    public List<NewsArticle> getTopHeadlines(String country) throws Exception {
+    public List<NewsArticle> getTopHeadlines(Map<String, String> queryParams) throws Exception {
         //Utility class for making HTTP requests and handling responses
         RestTemplate restTemplate = new RestTemplate();
 
         List<NewsArticle> newsList = new ArrayList<>();
 
-        String getUrl = "https://newsapi.org/v2/top-headlines?country=" + country + "&apiKey=" + apiKey;
+        StringBuilder getUrl = new StringBuilder("https://newsapi.org/v2/top-headlines?");
+
+        queryParams.forEach((key, value) -> getUrl.append(key).append("=").append(value).append("&"));
+
+        getUrl.append("apiKey=").append(apiKey);
+
         //setting HTTPHeaders
         HttpHeaders headers = new HttpHeaders();
         //set to application json to indicate that the response will be in JSON format
@@ -36,7 +41,7 @@ public class NewsService {
         HttpEntity<String> entity = new HttpEntity<>(headers);
         //exchange is used to send HTTP GET request to the URL and receive the response
         //ResponseEntity catches the responses
-        ResponseEntity<String> response = restTemplate.exchange(getUrl, HttpMethod.GET, entity, String.class);
+        ResponseEntity<String> response = restTemplate.exchange(getUrl.toString(), HttpMethod.GET, entity, String.class);
 
         if (response.getStatusCode() == HttpStatus.OK) {
             ObjectMapper mapper = new ObjectMapper(); //Jackson utility to parse JSON strings into Java Objects
