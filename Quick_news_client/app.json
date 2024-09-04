@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Quick_news_client",
-    "slug": "Quick_news_client",
+    "name": "quick_news_client",
+    "slug": "quick_news_client",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

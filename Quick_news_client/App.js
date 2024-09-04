@@ -1,27 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import HomeScreen from './src/screens/HomeScreen';
-import TopNewsScreen from './src/screens/TopNewsScreen';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-
-const Stack = createStackNavigator();
+import { StyleSheet, Text, SafeAreaView } from 'react-native';
+import NewsList from './src/screens/NewsList';
+import NewsHome from './src/screens/NewsHome';
 
 export default function App() {
   return (
-    <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="News" component={TopNewsScreen} />
-
-      {/* Add other screens here */}
-    </Stack.Navigator>
-  </NavigationContainer>
     // <View style={styles.container}>
-    //   <Text>Quick News!</Text>
-    //   <HomeScreen></HomeScreen>
+    //   <Text>Open up App.js to start working on your app!</Text>
     //   <StatusBar style="auto" />
     // </View>
+    <SafeAreaView style={styles.container}>
+      <StatusBar barStyle="dark-content" />
+      <NewsList />
+      <NewsHome />
+      {/* <Home /> */}
+  </SafeAreaView>
   );
 }
 

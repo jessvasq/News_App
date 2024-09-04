@@ -1,15 +1,16 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost/api/news';
+const BASE_URL = 'http://localhost:8088/api'; 
 
 export const getTopHeadlines = async (country = 'us') => {
   try {
-    const response = await axios.get(API_URL, {
+    const response = await axios.get(`${BASE_URL}/news`, {
       params: { country },
     });
+    console.log(response.data)
     return response.data;
   } catch (error) {
-    console.error('Error fetching top headlines:', error.message || error.response?.data || error);
-    throw error; 
+    console.error("Error fetching news:", error);
+    return [];
   }
 };
