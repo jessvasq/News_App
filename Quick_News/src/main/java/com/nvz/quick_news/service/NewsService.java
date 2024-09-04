@@ -3,13 +3,9 @@ package com.nvz.quick_news.service;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nvz.quick_news.entity.NewsArticle;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -59,6 +55,7 @@ public class NewsService {
                     news.setAuthor(jsonNode.path("author").asText("No Author"));
                     news.setUrl(jsonNode.path("url").asText("No Url"));
                     news.setContent(jsonNode.path("content").asText("No Content"));
+                    news.setUrlToImage(jsonNode.path("urlToImage").asText("No UrlToImage"));
                     news.setDescription(jsonNode.path("description").asText("No Description"));
                     news.setSource(jsonNode.path("source").path("name").asText("No Source"));
                     newsList.add(news);
