@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet, Dimensions, Image } from 'react-native';
 import { getTopHeadlines } from '../services/NewsService';
+import { Button } from 'react-native-web';
 
 
 const { width } = Dimensions.get("window");
 
-const NewsList = () => {
+const NewsList = ({ navigation }) => {
   const [newsArticles, setNewsArticles] = useState([]);
   const [itemHeight, setItemHeight] = useState(100);
   const numColumns = 3;
@@ -55,10 +56,11 @@ const GridItem = ({ item, itemHeight }) => (
         : {uri:'https://images.pexels.com/photos/3944454/pexels-photo-3944454.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}
       }/>
     <Text style={styles.title}>{item.title}</Text>
-    {/* <Text style={styles.description}>{item.description}</Text> */}
     <Text style={styles.source}>Source: {item.source}</Text>
   </View>
+  
 );
+
 
 const styles = StyleSheet.create({
   newsItem: {

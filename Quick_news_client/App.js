@@ -2,19 +2,22 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, SafeAreaView } from 'react-native';
 import NewsList from './src/screens/NewsList';
 import NewsHome from './src/screens/NewsHome';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 export default function App() {
+  const Stack = createNativeStackNavigator();
+
   return (
-    // <View style={styles.container}>
-    //   <Text>Open up App.js to start working on your app!</Text>
-    //   <StatusBar style="auto" />
-    // </View>
-    <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" />
-      <NewsList />
-      <NewsHome />
-      {/* <Home /> */}
-  </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='NewsList'>
+        {/* <SafeAreaView style={styles.container}>
+          <StatusBar barStyle="dark-content" /> */}
+          <Stack.Screen name="NewsList" component={NewsList}  options={{ title: 'BREAKING NEWS', headerStyle: { backgroundColor: '#f4511e' }, headerTintColor: '#fff' }}/>
+          <Stack.Screen name="Profile" component={NewsHome} options={{ title: 'Details Page' }}/> 
+        {/* </SafeAreaView> */}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
