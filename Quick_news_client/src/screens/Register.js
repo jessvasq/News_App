@@ -28,11 +28,8 @@ const Register = () => {
 
             // Check if the response is successful
             if (response.ok) {
-                // const data = await response.json();
-                // console.log('User registered successfully:', data);
                 alert('User registered successfully!');
             } else {
-                // Extract error message for better feedback
                 const errorData = await response.json();
                 console.error('Error during registration:', errorData);
                 alert(`Error: ${errorData.message || 'Registration failed'}`);
@@ -50,7 +47,6 @@ const Register = () => {
             <Text style={styles.label}>Username</Text>
             <TextInput 
                 style={styles.input}
-                // placeholder="Username" 
                 value={username} 
                 onChange={(e) => setUsername(e.target.value)} 
             />
@@ -58,15 +54,13 @@ const Register = () => {
 
             <TextInput 
                 style={styles.input} 
-                // placeholder="Profile photo URL" 
                 value={profilePicture} 
                 onChange={(e) => setProfilePicture(e.target.value)} 
             />
 
             <Text style={styles.label}>Language</Text>
             <TextInput
-                style={styles.input}
-                // placeholder="Language" 
+                style={styles.input} 
                 value={language} 
                 onChange={(e) => setLanguage(e.target.value)} 
             />
@@ -74,14 +68,12 @@ const Register = () => {
             <Text style={styles.label}>Password</Text>
             <TextInput 
                 style={styles.input} 
-                // placeholder="Password" 
                 value={password} 
                 onChange={(e) => setPassword(e.target.value)} 
             />
             <Text style={styles.label}>Email</Text>
             <TextInput
                  style={styles.input}
-                // placeholder="Email" 
                 value={email} 
                 onChange={(e) => setEmail(e.target.value)} 
             />
@@ -91,7 +83,6 @@ const Register = () => {
         </TouchableOpacity>
     </View>
       
-
             <View style={{ borderTopWidth: 1, borderTopColor: 'grey', marginTop: 20, textAlign: 'center' }}>
             <TouchableOpacity style={{ marginTop: 10, fontWeight: 'semibold' }}> SUBSCRIBE NOW </TouchableOpacity>
             <Text style={{  marginTop: 10, textAlign: 'center' }}> Cancel or pause anytime </Text>
@@ -116,8 +107,6 @@ const styles = StyleSheet.create({
     },
     input: {
       height: 40,
-      // borderColor: 'gray',
-      // borderWidth: 1,
       borderRadius: 10,
       marginBottom: 16,
       paddingHorizontal: 8,

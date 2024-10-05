@@ -23,7 +23,7 @@ const SplitScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row', // Use row to position child components side-by-side
+    flexDirection: 'row',
   },
   newsListContainer: {
     marginTop: 15,

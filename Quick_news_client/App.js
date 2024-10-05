@@ -2,12 +2,9 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SplitScreen from './src/screens/SplitScreen';
-import { Button } from 'react-native-web';
 import Details from './src/screens/Details';
 import ArticleDetails from './src/screens/ArticleDetails';
 import ProfileScreen from './src/screens/ProfileScreen';
-
-// import NavBar from './src/screens/NavBar';
 import  React, { useState } from 'react';
 import Register from './src/screens/Register';
 import LoginScreen from './src/screens/LoginScreen';
@@ -46,37 +43,6 @@ function NavBar({ navigation }){
   const [showNavBar, setShowNavBar] = useState(false);
 
   return (
-    // <View style={styles.container}>
-    //   {/* Menu Button */}
-    //   <Button title="Menu" onPress={() => setShowNavBar(!showNavBar)} />
-
-    //   {/* Navbar Items */}
-    //   <View style={styles.navbar}>
-    //     {/* First item positioned to the left */}
-    //     <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('HomeScreen')}>
-    //       <Text style={styles.navText}>Home</Text>
-    //     </TouchableOpacity>
-
-    //     {/* Remaining items spread across the page */}
-    //     <View style={styles.spreadItems}>
-    //       <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('SplitScreen')}>
-    //         <Text style={styles.navText}>Split Screen</Text>
-    //       </TouchableOpacity>
-    //       <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('ExtraContent')}>
-    //         <Text style={styles.navText}>Extra Content</Text>
-    //       </TouchableOpacity>
-    //     </View>
-    //   </View>
-
-    //   {/* Dropdown Menu */}
-    //   {showNavBar && (
-    //     <View style={styles.menu}>
-    //       <Text style={styles.menuItem}>Dropdown Item 1</Text>
-    //       <Text style={styles.menuItem}>Dropdown Item 2</Text>
-    //     </View>
-    //   )}
-    // </View>
-
     <View style={styles.container}>
       {/* <Button style = {styles.menuTitle} color="black" title="Menu" 
           onPress={() => setShowNavBar(!showNavBar)} /> */}
@@ -91,15 +57,6 @@ function NavBar({ navigation }){
           <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('SplitScreen')}>
               <Text style={styles.navText}>Home</Text>
           </TouchableOpacity>
-          {/* <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('WatchScreen')}>
-              <Text style={styles.navText}>Watch</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Details')}>
-              <Text style={styles.navText}>Markets</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('TechScreen')}>
-              <Text style={styles.navText}>Tech</Text>
-          </TouchableOpacity> */}
           <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('SavedArticlesScreen')}>
               <Text style={styles.navText}>My Articles</Text>
           </TouchableOpacity>
@@ -112,7 +69,6 @@ function NavBar({ navigation }){
           <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Logout')}>
               <Text style={styles.navText}>Logout</Text>
           </TouchableOpacity>
-
           </View>
       </View>
 
@@ -128,26 +84,22 @@ function NavBar({ navigation }){
           </View>
       )}
     </View>
-
   );
 
 }
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 2,
     padding: 10,
     flexDirection: 'row',
     left: 10,
     backgroundColor: '#fff',
     alignItems: 'center',
-    // justifyContent: 'center',
   },
 
   navbar: {
     flexDirection: 'row',
     flex: 1, 
-    // justifyContent: 'space-evenly',
     alignItems: 'center',
     backgroundColor: 'white',
     textTransform: 'uppercase',
@@ -159,7 +111,6 @@ const styles = StyleSheet.create({
   },
 
   navItem: {
-      // paddingVertical: 10,
       flex: 1,
       flexDirection: 'row',
       justifyContent: 'space-evenly',
@@ -179,8 +130,7 @@ const styles = StyleSheet.create({
   menu: {
     backgroundColor: 'white',
     padding: 20,
-  //   marginTop: 5,
-  marginBottom: 10,
+    marginBottom: 10,
     borderRadius: 5,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -198,7 +148,6 @@ const styles = StyleSheet.create({
   },
 
   menuTitle: {
-      backgroundColor: 'black',
-      
+      backgroundColor: 'black',  
   }
 });

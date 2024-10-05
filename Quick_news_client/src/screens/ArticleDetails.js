@@ -1,63 +1,3 @@
-// import React from 'react';
-// import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
-
-// export default function ArticleDetails ({ route }) {
-//   const { article } = route.params; // Retrieve the article from the navigation parameters
-
-//   return (
-//     <ScrollView style={styles.container}>
-//       <Text style={styles.title}>{article.title}</Text>
-//       {article.urlToImage ? (
-//         <Image style={styles.image} source={{ uri: article.urlToImage }} />
-//       ) : null}
-
-//       <View style={styles.metaData}>
-//         <Text style={styles.author}>By: {article.author || 'Unknown Author'}</Text>
-//         <Text style={styles.source}>Source: {article.source.name}</Text>
-//         <Text style={styles.source}>{article.description}</Text>
-//       </View>
-      
-//       <Text style={styles.content}>{article.content || 'No content available'}</Text>
-//     </ScrollView>
-//   );
-// };
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     padding: 16,
-//     backgroundColor: '#ffffff',
-//   },
-//   title: {
-//     fontSize: 24,
-//     fontWeight: 'bold',
-//     marginBottom: 10,
-//   },
-//   image: {
-//     width: '100%',
-//     height: 200,
-//     borderRadius: 10,
-//     marginBottom: 10,
-//   },
-//   metaData: {
-//     marginBottom: 20,
-//   },
-//   author: {
-//     fontStyle: 'italic',
-//     marginBottom: 5,
-//   },
-//   source: {
-//     fontWeight: '600',
-//   },
-//   content: {
-//     fontSize: 16,
-//     lineHeight: 24,
-//   },
-// });
-
-
-////////////////////////////
-
 import React from 'react';
 import { View, Text, Image, Button, ScrollView, StyleSheet, Alert, TouchableOpacity} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -105,13 +45,9 @@ export default function ArticleDetails({ route }) {
 
       <View style={styles.metaData}>
         <Text style={styles.author}>By: {article.author || 'Unknown Author'}</Text>
-        {/* <Text style={styles.source}>Source: {article.source.name}</Text> */}
-        {/* <Text style={styles.description}>{article.content}</Text> */}
       </View>
 
       <Text style={styles.content}>{article.content || 'No content available'}</Text>
-    
-
       <TouchableOpacity style={styles.button} title="Save Article" onPress={saveArticle}>
         <Text style={styles.buttonText}>Add to My Reading List</Text>
       </TouchableOpacity>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-const locations = ['All', 'US', 'UK', 'China', 'Mexico', 'Rusia'];
+const locations = ['All', 'US', 'UK', 'China', 'Mexico', 'Russia'];
 
 const LocationDropdown = ({ selectedLocation, setSelectedLocation }) => {
   const [showDropdown, setShowDropdown] = useState(false);

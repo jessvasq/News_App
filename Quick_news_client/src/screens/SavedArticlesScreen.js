@@ -5,14 +5,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export default function SavedArticlesScreen() {
   const [savedArticles, setSavedArticles] = useState([]);
 
-
-  // const mockArticles = [
-  //   { id: 1, title: 'Article 1', description: 'Description of article 1' },
-  //   { id: 2, title: 'Article 2', description: 'Description of article 2' },
-  //   { id: 3, title: 'Article 3', description: 'Description of article 3' },
-  // ];
-
-  
   useEffect(() => {
     const fetchSavedArticles = async () => {
       try {
@@ -47,7 +39,7 @@ export default function SavedArticlesScreen() {
 
 
   useEffect(() => {
-    console.log('Number of saved articles:', savedArticles.length); // Debug state length
+    console.log('Number of saved articles:', savedArticles.length); 
   }, [savedArticles]);
 
 

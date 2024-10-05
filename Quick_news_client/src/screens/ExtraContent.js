@@ -1,7 +1,6 @@
 // ExtraContent.js
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet, Dimensions, Image, TouchableOpacity } from 'react-native';
-// import { FlatList } from 'react-native-web';
 
 const { width } = Dimensions.get("window");
 

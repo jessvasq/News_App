@@ -67,7 +67,6 @@ const styles = StyleSheet.create({
     navbar: {
         flexDirection: 'row',
         flex: 1, 
-        // justifyContent: 'space-evenly',
         alignItems: 'center',
         backgroundColor: 'white',
         textTransform: 'uppercase',
@@ -79,7 +78,6 @@ const styles = StyleSheet.create({
     },
 
     navItem: {
-        // paddingVertical: 10,
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-evenly',
@@ -99,8 +97,7 @@ const styles = StyleSheet.create({
     menu: {
       backgroundColor: 'white',
       padding: 20,
-    //   marginTop: 5,
-    marginBottom: 10,
+      marginBottom: 10,
       borderRadius: 5,
       shadowColor: '#000',
       shadowOffset: { width: 0, height: 2 },

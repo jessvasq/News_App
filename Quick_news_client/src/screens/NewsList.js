@@ -9,108 +9,10 @@ import { GetArticlesByCategory } from '../services/ArticleByCategory.js';
 import { GetArticlesByLocation } from '../services/ArticleByLocation.js';
 import { fetchArticlesByQuery } from '../services/ArticleByQuery.js';
 
-// const NewsList = ({ navigation }) => {
-//   const [newsArticles, setNewsArticles] = useState([]);
-//   const [itemHeight, setItemHeight] = useState(100);
-//   const numColumns = 3;
-//   const numRows = 4;
 
-//   useEffect(() => {
-//     const fetchNews = async () => {
-//       const articles = await getTopHeadlines();
-//       setNewsArticles(articles);
-//     };
+const { width } = Dimensions.get("window");
 
-//     fetchNews();
-
-//     const updateItemHeight = () => {
-//       const { height } = Dimensions.get("window");
-//       const newItemHeight = Math.floor( height / numRows)
-//       setItemHeight(newItemHeight);
-//     }
-    
-//     // Set initial item height 
-//     updateItemHeight();
-//     Dimensions.addEventListener('change', updateItemHeight);
-    
-//     return () => {
-//       Dimensions.removeEventListener('change', updateItemHeight); // Remove event listener
-//     };
-
-
-//   }, []);
-
-//   return (
-//     <FlatList
-//       data={newsArticles}
-//       renderItem={({ item }) => <GridItem item={item} itemHeight={itemHeight} />}
-//       keyExtractor={(item, index) => index.toString()}
-//       numColumns={numColumns}
-//     />
-//   );
-// };
-
-
-    // {/* Display the filtered list - MOCK DATA*/}
-    // {/* <FlatList
-    //   data={newsArticles}
-    //   renderItem={({ item }) => 
-    //     <GridItem item={item} itemHeight={itemHeight} />}
-
-    //   keyExtractor={(item) => item.id} // Use a unique id for the keyExtractor
-    //   numColumns={numColumns}
-    // /> */}
-
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-  /// ------------------- TESTING ---------------------------------------
-
-  // // Mock data for news articles
-  // const mockArticles = [
-  //   { id: '1', title: 'Article 1', description: 'Description of Article 1' },
-  //   { id: '2', title: 'Article 2', description: 'Description of Article 2' },
-  //   { id: '3', title: 'Article 3', description: 'Description of Article 3' },
-  //   { id: '4', title: 'Article 4', description: 'Description of Article 4' },
-  //   { id: '5', title: 'Article 5', description: 'Description of Article 5' },
-  //   { id: '6', title: 'Article 6', description: 'Description of Article 6' },
-  //   { id: '7', title: 'Article 7', description: 'Description of Article 7' },
-  //   { id: '8', title: 'Article 8', description: 'Description of Article 8' },
-  //   { id: '9', title: 'Article 9', description: 'Description of Article 9' },
-  // ];
-
-  // useEffect(() => {
-  //   // Instead of fetching from the API, set the mock data
-  //   setNewsArticles(mockArticles);
-
-  //   const updateItemHeight = () => {
-  //     const { height } = Dimensions.get("window");
-  //     const newItemHeight = Math.floor(height / numRows);
-  //     setItemHeight(newItemHeight);
-  //   };
-
-  //   // Set initial item height 
-  //   updateItemHeight();
-  //   Dimensions.addEventListener('change', updateItemHeight);
-
-  //   return () => {
-  //     Dimensions.removeEventListener('change', updateItemHeight); // Remove event listener
-  //   };
-  // }, []);
-
-  /// ------------------- TESTING ---------------------------------------
-
-  // -----------------------  API --------------------------
-
-  const { width } = Dimensions.get("window");
-
-  const NewsList = ({ }) => {
+const NewsList = ({ }) => {
     const [newsArticles, setNewsArticles] = useState([]);
     const [itemHeight, setItemHeight] = useState(100);
     const numColumns = 3;
@@ -222,11 +124,6 @@ import { fetchArticlesByQuery } from '../services/ArticleByQuery.js';
     }
   };
 
-  // Fetch articles whenever the category changes
-  // useEffect(() => {
-  //   handleSearch();
-  // }, [selectedCategory, selectedLocation]); //re-fetch when the category changes
-  
 
   return (
     <View style ={styles.container}>
@@ -303,7 +200,6 @@ const styles = StyleSheet.create({
     marginTop: 50,
     height: 100,
     alignItems: "center",
-    // backgroundColor: "green",
     borderColor: 'green',
     borderWidth: 1,
     borderStyle: 'solid',
@@ -335,8 +231,6 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 120, 
     marginTop:150,
-    // marginBottom: 10,
-    // resizeMode: 'cover',
     borderRadius: 8,
   },
 
@@ -368,10 +262,7 @@ const styles = StyleSheet.create({
     padding: 20,
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
-    
   },
-
-
 });
 
 export default NewsList;

@@ -74,11 +74,11 @@ export default function LoginScreen() {
 
       {error ? <Text style={styles.error}>{error}</Text> : null}
 
-        <View>
+    <View>
       <TouchableOpacity style={styles.button} title="Login" onPress={handleLogin}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
-</View>
+    </View>
       
 
       <View style={{ borderTopWidth: 1, borderTopColor: 'grey', marginTop: 20, textAlign: 'center' }}>
@@ -104,8 +104,6 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    // borderColor: 'gray',
-    // borderWidth: 1,
     borderRadius: 10,
     marginBottom: 16,
     paddingHorizontal: 8,
