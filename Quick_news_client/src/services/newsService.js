@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = 'http://localhost:8088/api'; 
 
-export const getTopHeadlines = async (country = 'us') => {
+export const GetTopHeadlines = async (country = 'us') => {
   try {
     const response = await axios.get(`${BASE_URL}/news`, {
       params: { country },
@@ -14,3 +14,5 @@ export const getTopHeadlines = async (country = 'us') => {
     return [];
   }
 };
+
+

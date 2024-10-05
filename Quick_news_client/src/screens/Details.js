@@ -1,3 +1,5 @@
+import { View, Button } from 'react-native';
+
 export default function Details() {
     return (
         <View>
