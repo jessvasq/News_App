@@ -84,23 +84,4 @@ public class NewsController {
         return newsService.getSportsHeadlines();
     }
 
-
-//
-//    @PostMapping("/saveArticle")
-//    public ResponseEntity<String> saveArticle(@RequestBody NewsArticle apiArticle) {
-//        // Create a new Article instance
-//        SavedArticle article = new SavedArticle();
-//        article.setTitle(apiArticle.getTitle());
-//        article.setAuthor(apiArticle.getAuthor());
-//        article.setUrl(apiArticle.getUrl());
-//        article.setContent(apiArticle.getContent());
-//        article.setUrlToImage(apiArticle.getUrlToImage());
-//        article.setDescription(apiArticle.getDescription());
-//        article.setSource(apiArticle.getSource());
-//
-//        articleService.saveArticle(article);
-//
-//        return ResponseEntity.ok("Article saved successfully");
-//    }
-
 }

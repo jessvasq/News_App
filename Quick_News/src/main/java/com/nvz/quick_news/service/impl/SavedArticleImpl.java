@@ -19,26 +19,6 @@ public class SavedArticleImpl implements SavedArticleService {
     @Autowired
     private SavedArticleRepository savedArticleRepository;
 
-//    @Override
-//    public void saveArticle(SavedArticle user) {
-//        SavedArticle savedArticle = new SavedArticle();
-//        savedArticle.setSource(savedArticle.getSource());
-//        savedArticle.setAuthor(savedArticle.getAuthor());
-//        savedArticle.setTitle(savedArticle.getTitle());
-//        savedArticle.setDescription(savedArticle.getDescription());
-//        savedArticle.setUrl(savedArticle.getUrl());
-//        savedArticle.setUrlToImage(savedArticle.getUrlToImage());
-//        savedArticle.setPublishedAt(savedArticle.getPublishedAt());
-//        savedArticle.setContent(savedArticle.getContent());
-//        savedArticle.setCreated(LocalDateTime.now());
-//        savedArticleRepository.save(savedArticle);
-//    }
-
-//    @Override
-//    public List<SavedArticle> getAllSavedArticles() {
-//        return List.of();
-//    }
-
     @Autowired
     private SavedArticleRepository articleRepository;
 
@@ -75,15 +55,6 @@ public class SavedArticleImpl implements SavedArticleService {
      * @param username The username of the user.
      * @return A list of saved articles.
      */
-//    public List<SavedArticle> getAllSavedArticles(String username) {
-//        Optional<User> userOptional = userRepository.findByEmail(username);
-//        if (userOptional.isPresent()) {
-//            return userOptional.get().getSavedArticles();
-//        } else {
-//            throw new RuntimeException("User not found");
-//        }
-//    }
-
     public List<SavedArticle> getAllSavedArticles(String username) {
         Optional<User> userOptional = userRepository.findByEmail(username);
         if (userOptional.isPresent()) {

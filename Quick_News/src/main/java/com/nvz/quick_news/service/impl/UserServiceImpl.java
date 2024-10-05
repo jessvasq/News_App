@@ -3,7 +3,6 @@ package com.nvz.quick_news.service.impl;
 import com.nvz.quick_news.entity.User;
 import com.nvz.quick_news.repository.UserRepository;
 import com.nvz.quick_news.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

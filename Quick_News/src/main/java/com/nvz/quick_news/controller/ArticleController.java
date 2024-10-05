@@ -1,7 +1,6 @@
 package com.nvz.quick_news.controller;
 
 import com.nvz.quick_news.config.JwtService;
-import com.nvz.quick_news.entity.NewsArticle;
 import com.nvz.quick_news.entity.SavedArticle;
 import com.nvz.quick_news.service.SavedArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
