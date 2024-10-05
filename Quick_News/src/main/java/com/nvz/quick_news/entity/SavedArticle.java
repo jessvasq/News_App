@@ -5,6 +5,9 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
+/**
+ * Article to be stored in the database
+ */
 @Setter
 @Getter
 @NoArgsConstructor
@@ -17,14 +20,19 @@ public class SavedArticle {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-    //A saved article is associated with a single "User" and a single "Article"
-    @ManyToOne
-    @JoinColumn(name="user_id", nullable = false)//foreign key that link to the 'user' entity
-    private User user;
+    private String source;
+    private String author;
+    private String title;
+    private String description;
+    private String url;
+    private String urlToImage;
+    private String publishedAt;
+    private String content;
 
+    // Relationship to the user
     @ManyToOne
-    @JoinColumn(name="article_id", nullable = false)//foreign key that link to the 'article' entity
-    private Article article;
+    @JoinColumn(name = "user_id", nullable=false)
+    private User user;
 
     private LocalDateTime created;
 

@@ -8,6 +8,4 @@ import java.util.List;
 
 @Repository
 public interface SavedArticleRepository extends JpaRepository<SavedArticle, Long> {
-    List<SavedArticle> findSavedArticlesByUser_UserId(Long userId);
-    SavedArticle findSavedArticleById(Long id);
 }

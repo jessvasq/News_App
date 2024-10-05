@@ -1,6 +1,9 @@
 package com.nvz.quick_news.entity;
 import lombok.*;
 
+/**
+API MODEL - data structure returned by the News API
+ **/
 @Getter
 @Setter
 @NoArgsConstructor
