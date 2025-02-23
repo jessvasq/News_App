@@ -1,5 +1,5 @@
 # Quick News
-Mobile/Desktop news application built with React Native, Spring Boot, and MySQL, featuring a clean, intuitive interface with multimedia support and personalized news feeds
+Mobile news application built with React Native, Spring Boot, and MySQL, featuring a clean, intuitive interface with multimedia support and personalized news feeds
 
 ### Features ###
 - Filtering options
